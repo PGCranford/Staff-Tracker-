@@ -25,7 +25,7 @@ const viewStaff = async () => {
 
 };
 
-const start = async () => {
+const start = staffInput = async () => {
     const orm = new ORM(await connection);
     let chooseExit = false;
     while (!chooseExit) {
@@ -53,6 +53,22 @@ const start = async () => {
                 break;
             }
 
+            case Staff.ADD_EMPLOYEE: {
+                const employeeData = await inquirer.prompt({
+                    type: "input",
+                    name: "employeeFirstName",
+                    message: "What is your employees first name?"
+                });
+                // {
+                //     type: "input",
+                //     name: "employeeLastName",
+                //     message: "what is your employees last name?",
+                // });
+                await orm.createEmployee('employeeData', employeeData);
+                break;
+
+            }
+
             default: {
                 chooseExit = true;
                 break;
@@ -63,6 +79,7 @@ const start = async () => {
 
 };
 start();
+module.exports = staffInput;
 
 
 
