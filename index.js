@@ -53,42 +53,40 @@ const start = staffInput = async () => {
                 break;
             }
             case Staff.ADD_EMPLOYEE: {
-                const empID = inquirer.prompt
-                const employeeFirstName = inquirer.prompt
-                const employeeLastName = inquirer.prompt
-                const roleId = inquirer.prompt
-                const empMgrID = await inquirer.prompt([
+
+                const { first_name, last_name, role_id, manager_id } = await inquirer.prompt([
+                    // {
+                    //     type: "input",
+                    //     name: "empID",
+                    //     message: "What is your employee's ID?",
+                    // },
                     {
+
                         type: "input",
-                        name: "empID",
-                        message: "What is your employee's ID?"
+                        name: "first_name",
+                        message: "What is your employees first name?",
                     },
                     {
+
                         type: "input",
-                        name: "employeeFirstName",
-                        message: "What is your employees first name?"
-                    },
-                    {
-                        type: "input",
-                        name: "employeeLastName",
+                        name: "last_name",
                         message: "what is your employees last name?",
                     },
                     {
                         type: "input",
-                        name: "roleId",
-                        message: "What is the employee's role's ID?"
+                        name: "role_id",
+                        message: "What is the employee's role's ID?",
                     },
                     {
                         type: "input",
-                        name: "empMgrID",
+                        name: "manager_id",
                         message: "What is the ID of this employee's manager?"
                     },
 
-
                 ]);
+                console.log("test", first_name, last_name, role_id, manager_id)
 
-                await orm.createEmployee(empID, employeeFirstName, employeeLastName, roleId, empMgrID);
-
+                await orm.createEmployee(first_name, last_name, role_id, manager_id);
                 break;
             }
             default: {
