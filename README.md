@@ -6,6 +6,8 @@ A command line application that allows an employer to veiw staff in a MYSQL tabl
 
 ### Walkthrough Video
 
+https://drive.google.com/file/d/1dDmkSKG8IHCs0nBTcgCsDrMSx4Nf3_Cd/view
+
 
 ### Made Using 
 
