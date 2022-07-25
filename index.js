@@ -93,9 +93,10 @@ const start = staffInput = async () => {
                         message: "what is your employees last name?",
                     },
                     {
-                        type: "input",
-                        name: "role_id",
-                        message: "What is the employee's role's ID?",
+                        type: "list",
+                        name: "department_name",
+                        message: "What is the employee's department",
+                        choices: ['Sales', 'Technology', 'Finance', 'Legal']
                     },
                     {
                         type: "input",
