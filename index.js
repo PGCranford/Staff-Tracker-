@@ -40,7 +40,7 @@ const start = staffInput = async () => {
                 break;
             }
             case Staff.VIEW_ROLES: {
-                console.table(await orm.getRoles)
+                console.table(await orm.getRoles())
                 break;
             }
             case Staff.ADD_DEPARTMENT: {
@@ -67,9 +67,10 @@ const start = staffInput = async () => {
                         message: "What is the salary for this role?"
                     },
                     {
-                        type: "input",
-                        name: "department_id",
-                        message: "What is the department ID for this role?"
+                        type: "list",
+                        name: "department",
+                        message: "What is the department does this role belong to?",
+                        choices: ['Sales', 'Technology', 'Finance', 'Legal']
 
                     }
 

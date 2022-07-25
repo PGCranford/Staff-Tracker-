@@ -13,7 +13,7 @@ CREATE TABLE roles(
   title VARCHAR(30) NOT NULL,
   salary DECIMAL(10,2),
   department_id INTEGER 
-  -- CONSTRAINT fk_party FOREIGN KEY (department_id) REFERNCES department(department_id) ON DELETE SET NULL
+   CONSTRAINT fk_party FOREIGN KEY (department_id) REFERNCES department(department_id) ON DELETE SET NULL
 );
 
 CREATE TABLE employee(
@@ -22,7 +22,7 @@ CREATE TABLE employee(
     last_name VARCHAR(30) NOT NULL,
     role_id INTEGER,
     manager_id  INTEGER 
-    -- CONSTRAINT fk_party FOREIGN KEY (role_id) REFERNCES roles(role_id) ON DELETE SET NULL
+     CONSTRAINT fk_party FOREIGN KEY (role_id) REFERNCES roles(role_id) ON DELETE SET NULL
 
 );
 
