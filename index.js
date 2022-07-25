@@ -108,17 +108,17 @@ const start = staffInput = async () => {
                 await orm.createEmployee(first_name, last_name, role_id, manager_id);
                 break;
             }
-            case Staff = ALTER_TABLE: {
-                const newRole = await inquirer.prompt({
+            // case Staff = ALTER_TABLE: {
+            //     const newRole = await inquirer.prompt({
 
-                    type: "input",
-                    name: "updatEMP",
-                    message: "Enter the ID of the employee would you like to update?",
+            //         type: "input",
+            //         name: "updatEMP",
+            //         message: "Enter the ID of the employee would you like to update?",
 
 
-                });
-                await orm.updateEmployee(newRole);
-            }
+            //     });
+            //     await orm.updateEmployee(newRole);
+            // }
             default: {
                 chooseExit = true;
                 break;

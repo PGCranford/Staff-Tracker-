@@ -13,22 +13,16 @@ CREATE TABLE roles(
   title VARCHAR(30) NOT NULL,
   salary DECIMAL(10,2),
   department_id INTEGER 
-   CONSTRAINT fk_party FOREIGN KEY (department_id) REFERNCES department(department_id) ON DELETE SET NULL
+  -- CONSTRAINT fk_party FOREIGN KEY (department_id) REFERNCES department(department_id) ON DELETE SET NULL
 );
 
 CREATE TABLE employee(
-      emp_id INTEGER AUTO_INCREMENT PRIMARY KEY,
+      id INTEGER AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
     role_id INTEGER,
     manager_id  INTEGER 
-     CONSTRAINT fk_party FOREIGN KEY (role_id) REFERNCES roles(role_id) ON DELETE SET NULL
+    -- CONSTRAINT fk_party FOREIGN KEY (role_id) REFERNCES roles(role_id) ON DELETE SET NULL
 
-);
-
-ALTER TABLE employee(
- CHANGE emp_id 
-
-  
 );
   
