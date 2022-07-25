@@ -25,3 +25,10 @@ CREATE TABLE employee(
     -- CONSTRAINT fk_party FOREIGN KEY (role_id) REFERNCES roles(role_id) ON DELETE SET NULL
 
 );
+
+ALTER TABLE employee(
+ CHANGE emp_id 
+
+  
+);
+  

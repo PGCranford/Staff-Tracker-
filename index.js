@@ -52,16 +52,35 @@ const start = staffInput = async () => {
                 await orm.createDepartment(departmentName);
                 break;
             }
+
+            case Staff.ADD_ROLE: {
+
+                const { title, salary, department_id } = await inquirer.prompt([
+                    {
+                        type: "input",
+                        name: "title",
+                        message: "What is the Name of your new role? ",
+                    },
+                    {
+                        type: "input",
+                        name: "salary",
+                        message: "What is the salary for this role?"
+                    },
+                    {
+                        type: "input",
+                        name: "department_id",
+                        message: "What is the department ID for this role?"
+
+                    }
+
+                ]);
+                await orm.createRole(title, salary, department_id);
+                break;
+            }
             case Staff.ADD_EMPLOYEE: {
 
                 const { first_name, last_name, role_id, manager_id } = await inquirer.prompt([
-                    // {
-                    //     type: "input",
-                    //     name: "empID",
-                    //     message: "What is your employee's ID?",
-                    // },
                     {
-
                         type: "input",
                         name: "first_name",
                         message: "What is your employees first name?",
@@ -84,10 +103,19 @@ const start = staffInput = async () => {
                     },
 
                 ]);
-                console.log("test", first_name, last_name, role_id, manager_id)
-
                 await orm.createEmployee(first_name, last_name, role_id, manager_id);
                 break;
+            }
+            case Staff = ALTER_TABLE: {
+                const newRole = await inquirer.prompt({
+
+                    type: "input",
+                    name: "updatEMP",
+                    message: "Enter the ID of the employee would you like to update?",
+
+
+                });
+                await orm.updateEmployee(newRole);
             }
             default: {
                 chooseExit = true;
